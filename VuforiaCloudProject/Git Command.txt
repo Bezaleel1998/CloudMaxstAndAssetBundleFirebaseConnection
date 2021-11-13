@@ -1,0 +1,163 @@
+Git Bash Console : 
+- press Ctrl + l for clearing the git bash console
+- git init (for initialize the folder as git master key)
+- git status (showing changes and untracked files in git folder)
+- git status -s (simplified the status)
+- git config --global core.longpaths true
+- git config --global core.editor notepad (set the notepad as default text editor)
+- git restore --staged <file>... (to unstage the file)
+- git restore <file>...(to discard changes in working directory)
+- git branch "Branch name" (for making new branch)
+- git branch (for show any list of local branches)
+        -r (for see remote branch) -a (for showing all both local and remote branches)
+- git branch -d(delete) <branch name>...
+- git switch -c(create) <branch name>... (for switch to other branch)
+- git switch - (bring back to master branch)
+- git fetch (fetches all changes from remote repo)
+- git merge (merge file from remote repo to the local)
+
+//git pull = fetch + merge (combination fetch and merge)
+
+linux command :
+- mkdir <name of dir>... (making/create special dir)
+- nano <filename.typeoffile>... (for opening the file in nano) 
+- cd (stands for changing directory) <folder / directory name>...
+- touch <file name>... (making new file)
+- double dot (..) after cd means parent directory
+- rm .../file (delete file)
+- q (for quit list)
+
+
+(for making and changing branch simultanously)
+- git checkout (for changing branches) -b (for create and using new branch) <Name of the new branch>...
+- git switch (changing branch)
+	-c (create new branch)
+- git rm --cached (keeping file in your directory and remove it from git extension and not tracked anymore
+ example .classpath at java)
+
+- git commit --amend (takes current stage area and use it for the commit. 
+so becareful it can make you lost your data)
+- git commit --amend --no-edit (amends a commit without changing its commit message. 
+Replace the tip of the current branch by creating a new commit.)
+
+- git clone (url)
+- git clone <SSH/HTPPS>
+- git add (file names)
+- git commit -m "(committed message)"
+- git push -u origin master
+- git remote add origin master (url)
+- git log --all (for showing all commit)
+- git log <name of the branch>...
+- git log -<amount of last commit>...
+- git log --pretty=oneline (simplified the log)
+- git log --oneline (in a bit different way than usual)
+
+(remove staging area from directory)
+- git rm -r --cached (folder / file setting)
+
+(gitignore area)
+- touch .gitignore (making new file)
+- nano .gitignore (for editing)
+
+Git Lfs : 
+- git lfs install
+- git lfs track "*.psd" (tracking file that have attribute .psd) 
+- git add .gitattributes
+
+
+(Connect your existing repository to Bitbucket / github)
+- git remote add origin <https>...
+- git remote -v (Shows URLs of remote repositories when listing your current remote connections.)
+- git push origin -u master (for pushing your project into the repository)
+- git clone <https>... (for cloning the other project repository)
+
+
+(setting SSH key in Git GUI)
+- Right Click => Git GUI here
+- Help => Show SSH Key
+- Generate Key => put your own Password
+- Copy key to clipboard
+- go to website of github / bitbucket and at your account => settings
+- search SSH and GPG Key (github) or SSH Keys (Bitbucket)
+- Click new SSH key and put the generated keys at there.
+
+(for SSH Connection)
+- git remote set-url origin <ssh>...
+- git commit -a -m <"Commit Name">
+- git push (for pushing your project into the repository with ssh)
+- git push origin --delete <branch name>...(deleting remote branch at github / bitbucket)
+
+
+(Git rebase)
+- git reset (this command can reset state of your file system into specific version) --hard 
+(file from other revision will be restored and all changes from other revision will be removed) HEAD~1 
+(current place in git 1 commit ago)
+- git pull --rebase origin master
+- git push -f (force update (Be Extra Careful because it can erase other changes))
+or
+- git push --force-with-lease (safest way)
+
+(interactive Rebase and squash)
+- git rebase -i(interactive) HEAD~(amount of last commit)
+# Rebase 5cba459..0beb388 onto 5cba459 (2 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c <commit> to reword the commit message
+(you can combine 2 or more commit into 1 to ensure and get clean history)
+
+for commit and push git :
+- git commit -m "Add design file (your commit name)"
+- git push origin main
+
+(git reset)(explanation at screenshoot_122 (4).png)
+- git reset --soft <commit hash code (the first 6 num)>...
+(Mixed makes we get into the commit that we want to get but all file that not in that's commit doesn't 
+get into staging area)
+(hard will completely delete file from the last commit to the our target commit, so be carefull).
+- git reset --hard HEAD@{i} (reset current branch to the i position)
+
+(git stash)(for saving working directory) LIFO = Last in First Out
+- git stash (saving working)
+	...pop (appying last stash)
+	...-u (for untracked file // if you want to stash the new file but still unadded to commit)
+	...-a (stands for all file)
+- git stash apply (for getting the changes that we have before)
+	...Stash@{i}(i for number of list that we want to select)
+- git stash list (this command create state of changes)
+- git stash branch <branch name>...(create branch from stash)
+- git stash drop <stash@{id}>...(in case you wont to apply the stash but you just want to remove it)
+- git stash clear (in case you want to clear all changes inside stash)
+
+(git reflog)(when we lost some changed and we want to restore them)
+warning : reflog is stored for 90 days (or less) so keep it in mind
+- git reflog (you can easily get all changed in your repo history)
+	...--since="1.hour"(showing reflog for the past 1 hour, and you can change it to days, month or add more hour)
+- git log -g (for getting all reference from reflog) 
+- git branch <branch name>...<commit checksum that want to be restored>
+(for get all lost changes at new branch)
+- git log <name of the branch>...
+- git reset --hard HEAD@{i} (reset current branch to the i position / restoring before last reset)
+
+(modified the commit history command : Git cherry-pick)
+warning : at the real case scenario this command is considered not the good practice 
+because it will commit duplicated file in different commit in different branch. so, keep an eye out.
+- git cherry-pick <commit hash code (the first 6 num)>_space_<commit hash code (the first 6 num)>
+	...--continue (continuing cherry-picking)
+	...--abort (cancel the cherry-picking)
+	...-x (for get the information of commit code where we copy from)
