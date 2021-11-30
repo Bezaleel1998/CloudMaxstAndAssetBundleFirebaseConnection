@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
+  m_Name: AddressableAssetSettings
+  m_EditorClassIdentifier: 
+  m_DefaultGroup: ca9ae4d0b6d84f945ace8ce7b28836bb
+  m_OptimizeCatalogSize: 0
+  m_BuildRemoteCatalog: 0
+  m_BundleLocalCatalog: 0
+  m_CatalogRequestsTimeout: 0
+  m_DisableCatalogUpdateOnStart: 0
+  m_IgnoreUnsupportedFilesInBuild: 0
+  m_UniqueBundleIds: 0
+  m_NonRecursiveBuilding: 0
+  m_CCDEnabled: 1
+  m_maxConcurrentWebRequests: 500
+  m_ContiguousBundles: 0
+  m_StripUnityVersionFromBundleBuild: 0
+  m_DisableVisibleSubAssetRepresentations: 0
+  m_ShaderBundleNaming: 0
+  m_ShaderBundleCustomNaming: 
+  m_MonoScriptBundleNaming: 0
+  m_MonoScriptBundleCustomNaming: 
+  m_RemoteCatalogBuildPath:
+    m_Id: 4bc2a22e8ab8b1e428bd3c54d7a15a12
+  m_RemoteCatalogLoadPath:
+    m_Id: 4e6aa318e9edc15419bab63e7ece52f0
+  m_ContentStateBuildPath: 
+  m_BuildAddressablesWithPlayerBuild: 0
+  m_overridePlayerVersion: 
+  m_GroupAssets:
+  - {fileID: 11400000, guid: 2c338de379cccc24abfb07cc6646430c, type: 2}
+  - {fileID: 11400000, guid: 8f4282bf976e88546b33237f9ea01f77, type: 2}
+  - {fileID: 11400000, guid: fec9ee75e3aa8b34f89ff36c6f4abedb, type: 2}
+  - {fileID: 11400000, guid: dc15352a6ac83df4fbacc3cab0badc9d, type: 2}
+  m_BuildSettings:
+    m_CompileScriptsInVirtualMode: 0
+    m_CleanupStreamingAssetsAfterBuilds: 1
+    m_LogResourceManagerExceptions: 1
+    m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
+  m_ProfileSettings:
+    m_Profiles:
+    - m_InheritedParent: 
+      m_Id: 807d03de054c059449c8b077865c1ed1
+      m_ProfileName: Default
+      m_Values:
+      - m_Id: 9ce30f7690fbad54dbca3dc4cb5a0649
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: 69cf0a3744a17d24a8d30f8a5ff4a991
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: 6abb4dbadbbee094282ddd1b7d7cf588
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: dcbf36fa137f9c84785f5f1d3f84217f
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: 8236a18fb17126540a1c5db02c37a0de
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+    - m_InheritedParent: 
+      m_Id: 4db98fc70459f7540863c63b1ec171f5
+      m_ProfileName: Remote
+      m_Values:
+      - m_Id: 9ce30f7690fbad54dbca3dc4cb5a0649
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: 69cf0a3744a17d24a8d30f8a5ff4a991
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: 6abb4dbadbbee094282ddd1b7d7cf588
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets
+      - m_Id: dcbf36fa137f9c84785f5f1d3f84217f
+        m_Value: D:/Project/UnityGameDevelopmentProject/CloudMaxstAndAssetBundleFirebaseConnection/VuforiaCloudProject/Assets/AssetBundles
+      - m_Id: 8236a18fb17126540a1c5db02c37a0de
+        m_Value: https://storage.googleapis.com/unityassetbundleproject123.appspot.com/AssetBundles/
+    m_ProfileEntryNames:
+    - m_Id: 9ce30f7690fbad54dbca3dc4cb5a0649
+      m_Name: BuildTarget
+      m_InlineUsage: 0
+    - m_Id: 69cf0a3744a17d24a8d30f8a5ff4a991
+      m_Name: LocalBuildPath
+      m_InlineUsage: 0
+    - m_Id: 6abb4dbadbbee094282ddd1b7d7cf588
+      m_Name: LocalLoadPath
+      m_InlineUsage: 0
+    - m_Id: dcbf36fa137f9c84785f5f1d3f84217f
+      m_Name: RemoteBuildPath
+      m_InlineUsage: 0
+    - m_Id: 8236a18fb17126540a1c5db02c37a0de
+      m_Name: RemoteLoadPath
+      m_InlineUsage: 0
+    m_ProfileVersion: 1
+  m_LabelTable:
+    m_LabelNames:
+    - default
+  m_SchemaTemplates: []
+  m_GroupTemplateObjects:
+  - {fileID: 11400000, guid: 8892b4c3c8e754c4ea8948a9a2b4a0f7, type: 2}
+  m_InitializationObjects: []
+  m_CertificateHandlerType:
+    m_AssemblyName: 
+    m_ClassName: 
+  m_ActivePlayerDataBuilderIndex: 3
+  m_DataBuilders:
+  - {fileID: 11400000, guid: 6910e78f808172741a3ce115b37991d5, type: 2}
+  - {fileID: 11400000, guid: 541003aa93599fb43b07a4fd06f0f459, type: 2}
+  - {fileID: 11400000, guid: 69eb7a37f332358428e355ef0a6c81a5, type: 2}
+  - {fileID: 11400000, guid: 917c90f9c5f343a4dae88d94a74a17a4, type: 2}
+  m_ActiveProfileId: 4db98fc70459f7540863c63b1ec171f5
+  m_HostingServicesManager:
+    m_HostingServiceInfos: []
+    m_Settings: {fileID: 11400000}
+    m_NextInstanceId: 0
+    m_RegisteredServiceTypeRefs: []
+    m_GlobalProfileVariablesInfos:
+    - key: PrivateIpAddress
+      value: 192.168.56.1
+    - key: PrivateIpAddress_1
+      value: 192.168.1.8

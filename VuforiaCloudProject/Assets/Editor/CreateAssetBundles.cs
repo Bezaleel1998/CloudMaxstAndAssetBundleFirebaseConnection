@@ -15,20 +15,23 @@ public class CreateAssetBundles {
         }
         
         Directory.CreateDirectory(assetBundleDirectory);
-        
         //create bundles for all platform (use IOS for editor support on MAC but must be on IOS build platform)
-        //BuildPipeline.BuildAssetBundles(assetBundleDirectory,BuildAssetBundleOptions.None, BuildTarget.iOS);
-        //AppendPlatformToFileName("IOS");
-        //Debug.Log("IOS bundle created...");
 
+#if UNITY_ANDROID
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, BuildTarget.Android);
         AppendPlatformToFileName("Android");
         Debug.Log("Android bundle created...");
+#else
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory,BuildAssetBundleOptions.None, BuildTarget.iOS);
+        AppendPlatformToFileName("IOS");
+        Debug.Log("IOS bundle created...");
+#endif
 
         RemoveSpacesInFileNames();
 
         AssetDatabase.Refresh();
         Debug.Log("Process complete!");
+
     }
 
     static void RemoveSpacesInFileNames() {

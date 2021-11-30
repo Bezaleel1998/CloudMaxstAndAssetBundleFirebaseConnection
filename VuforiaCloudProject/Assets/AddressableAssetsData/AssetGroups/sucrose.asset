@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: sucrose
+  m_EditorClassIdentifier: 
+  m_GroupName: sucrose
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 83f7aaddddbe32745be98f14abb5fef8
+  m_SerializeEntries:
+  - m_GUID: 6f5f0eb02ee3fb54c9bb34664741e492
+    m_Address: Assets/Prefabs/sucrose.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cccff5de9f18d1146a8be9423b050853, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c07d264270aafa74eb2084ede8a8faf7, type: 2}
+    - {fileID: 11400000, guid: c339e3116f6b57049a4ba2f1089a62fe, type: 2}
