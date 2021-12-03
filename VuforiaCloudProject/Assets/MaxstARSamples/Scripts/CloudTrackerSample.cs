@@ -160,13 +160,13 @@ public class CloudTrackerSample : ARBehaviour {
     void TrackerDetected(string trackerCloudName)
     {
         PlayerPrefs.SetString("MaxStTrackerCloudName", trackerCloudName);
-        Debug.Log("Tracker Cloud Detected : " + trackerCloudName);
+        //Debug.Log("Tracker Cloud Detected : " + trackerCloudName);
     }
 
     void TrackerLost()
     {
         PlayerPrefs.SetString("MaxStTrackerCloudName", "");
-        Debug.Log("Tracker Cloud Lost !");
+        //Debug.Log("Tracker Cloud Lost !");
     }
 
     #endregion

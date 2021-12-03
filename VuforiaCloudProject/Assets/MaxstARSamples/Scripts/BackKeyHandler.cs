@@ -10,9 +10,9 @@ public class BackKeyHandler : Singleton<BackKeyHandler>
 {
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		/*if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			SceneStackManager.Instance.LoadPrevious();
-		}
+		}*/
 	}
 }
