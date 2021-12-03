@@ -8,5 +8,16 @@ using UnityEngine.SceneManagement;
 
 public class LoadAddressableScene : MonoBehaviour
 {
+    [Header("Connection To Database Firebase")]
+    [SerializeField] private AssetReference _assetReferenceScene;
+    //in case of multiple scenes
+    [SerializeField] private List<AssetReference> _references = new List<AssetReference>();
+    private AsyncOperationHandle<SceneInstance> handle;
+    [Header("GameObject")]
+    public GameObject camera;
     
+
+
+
+
 }
