@@ -9,9 +9,8 @@ public class CloudTrackerSample : ARBehaviour {
     private Dictionary<string, List<CloudTrackableBehaviour>> cloudTrackablesMap = new Dictionary<string, List<CloudTrackableBehaviour>>();
     private CameraBackgroundBehaviour cameraBackgroundBehaviour = null;
 
-    [SerializeField] private string secretID = "fc8cdf1697334385abc00fb27bf42315";
-    [SerializeField] private string secretKey = "0918241fb8f044188eb943cf99662058";
-
+    [SerializeField] private string SecretId = "fc8cdf1697334385abc00fb27bf42315";
+    [SerializeField] private string SecretKey = "0918241fb8f044188eb943cf99662058";
 
     void Awake()
     {
@@ -53,7 +52,7 @@ public class CloudTrackerSample : ARBehaviour {
         StartCamera();
 
         // Add SecretId and SecretKey.
-		TrackerManager.GetInstance().SetCloudRecognitionSecretIdAndSecretKey(secretID, secretKey);
+		TrackerManager.GetInstance().SetCloudRecognitionSecretIdAndSecretKey(SecretId, SecretKey);
         TrackerManager.GetInstance().StartTracker(TrackerManager.TRACKER_TYPE_CLOUD_RECOGNIZER);
 
         // For see through smart glass setting
@@ -80,9 +79,7 @@ public class CloudTrackerSample : ARBehaviour {
         {
             foreach(var trackable in trackableLists.Value) 
             {
-                
-                trackable.OnTrackFail();               
-
+                trackable.OnTrackFail();
             }
         }
     }
@@ -95,12 +92,10 @@ public class CloudTrackerSample : ARBehaviour {
 
         if (state == null)
         {
-
             return;
-        
         }
 
-        TrackerLost();
+        OnTrackerLost();//Edit Overhere OnTrackerLost
 
         TrackedImage image = state.GetImage();
 
@@ -113,21 +108,15 @@ public class CloudTrackerSample : ARBehaviour {
             if(cloudTrackablesMap.ContainsKey(trackable.GetCloudName())) {
                 foreach (var cloudTrackable in cloudTrackablesMap[trackable.GetCloudName()])
                 {
-
                     cloudTrackable.OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose());
-
-                    TrackerDetected(trackable.GetCloudMeta());
-
+                    OnTrackerDetect(trackable.GetCloudMeta());//Edit Overhere OnTrackerDetected
                 }
             } else {
                 if(cloudTrackablesMap.ContainsKey("_MaxstCloud_")) {
                     foreach (var cloudTrackable in cloudTrackablesMap["_MaxstCloud_"])
                     {
-                    
                         cloudTrackable.OnTrackSuccess(trackable.GetId(), trackable.GetName(), trackable.GetPose());
-
-                        TrackerDetected(trackable.GetCloudMeta());
-                    
+                        OnTrackerDetect(trackable.GetCloudMeta());//Edit Overhere OnTrackerDetected
                     }
                 }
             }
@@ -155,20 +144,21 @@ public class CloudTrackerSample : ARBehaviour {
         StopCamera();
     }
 
-    #region GetTrackerCloudNameData
 
-    void TrackerDetected(string trackerCloudName)
+    #region WHEN_TRACKER_DETECTED
+    void OnTrackerDetect(string trackerName)
     {
-        PlayerPrefs.SetString("MaxStTrackerCloudName", trackerCloudName);
-        //Debug.Log("Tracker Cloud Detected : " + trackerCloudName);
+
+        PlayerPrefs.SetString("MaxStTrackerCloudName", trackerName);
+
     }
 
-    void TrackerLost()
+    void OnTrackerLost()
     {
+
         PlayerPrefs.SetString("MaxStTrackerCloudName", "");
-        //Debug.Log("Tracker Cloud Lost !");
-    }
 
+    }
     #endregion
 
 }

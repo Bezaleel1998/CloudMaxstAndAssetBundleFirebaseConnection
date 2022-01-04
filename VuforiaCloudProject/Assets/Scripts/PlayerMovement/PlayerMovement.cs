@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     #region Player_Movement_And_Controll_TPS
 
-    //Old Controll System
+    //Old Controll System / Input System
     #region Old_PlayerControllerVersion
     //Need to add CharacterController at Inspector of the player
     void PlayerController(GameObject player, Rigidbody rb, CharacterController controller, float walkSpd, float runSpd, float jumpAmt, float turnSmoothTime, float turnSmoothVelocity)
@@ -107,13 +107,15 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
+        //if isPaused == true then make cursor = true and lockstate = CursorLockMode.Confined
+
     }
     #endregion
 
     //New Controll / Input System
 
     #region NewControllerVersion
-    
+
     //Player Movement
 
     private void FixedUpdateExecutionFunction()

@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fe18cf84859419abe620d058cf3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secretID: fc8cdf1697334385abc00fb27bf42315
-  secretKey: 0918241fb8f044188eb943cf99662058
+  SecretId: fc8cdf1697334385abc00fb27bf42315
+  SecretKey: 0918241fb8f044188eb943cf99662058
 --- !u!114 &45870059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +200,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BundleFolder: https://storage.googleapis.com/unityassetbundleproject123.appspot.com/AssetBundles/
   gm: {fileID: 45870059}
+  urlDataBaseFirebase: https://storage.googleapis.com/unityassetbundleproject123.appspot.com/AssetBundles/TrackerImage
+  textureImage: {fileID: 0}
+  fileName:
+  - GenshinImpact
+  - Priestess and Dokutah
 --- !u!114 &45870061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +317,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 68050981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 45870060}
+        m_MethodName: OnLoadImageFromWebButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &68050981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,12 +700,12 @@ PrefabInstance:
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.97777784
       objectReference: {fileID: 0}
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.014125001
       objectReference: {fileID: 0}
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}
@@ -699,12 +715,12 @@ PrefabInstance:
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -65
+      value: -58
       objectReference: {fileID: 0}
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -60
+      value: -54.107742
       objectReference: {fileID: 0}
     - target: {fileID: 7879769049641014781, guid: e92169671eae6bc4c8ab6124d003a11c,
         type: 3}

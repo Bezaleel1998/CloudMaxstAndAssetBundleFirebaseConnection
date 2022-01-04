@@ -74,11 +74,11 @@ public class ContentController : MonoBehaviour {
                 Debug.Log("Download Progress = " + currentValue + ", Data Name = " + assetName);
 
                 a = (int)(currentValue * 100);
-                if (a > 0 && a <= 33)
+                if (a > 0 && a <= 10)
                 {
                     status.text = "Loading...";
                 }
-                else if (a > 33 && a <= 67)
+                else if (a > 10 && a <= 67)
                 {
                     status.text = "Downloading " + assetName + " 3D";
                 }
