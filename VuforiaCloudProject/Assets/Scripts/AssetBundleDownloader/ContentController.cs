@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ContentController : MonoBehaviour {
 
     public API api;
-    public GameObject parent;
+    public GameObject[] parent;
     public GameManager gm;
 
     [Header("UI")]
@@ -37,9 +37,19 @@ public class ContentController : MonoBehaviour {
 
     public void LoadContent(string name) {
 
-        //DestroyAllChildren();
-        api.isDone = false;
-        api.GetBundleObject(name, OnContentLoaded, parent.transform);
+        for (int i = 0; i < parent.Length; i++)
+        {
+
+            if (parent[i].name.Contains(name))
+            {
+
+                //DestroyAllChildren();
+                api.isDone = false;
+                api.GetBundleObject(name, OnContentLoaded, parent[i].transform);
+
+            }
+
+        }
 
     }
 
@@ -51,13 +61,13 @@ public class ContentController : MonoBehaviour {
 
     }
 
-    void DestroyAllChildren() {
+    /*void DestroyAllChildren() {
         foreach (Transform child in parent.transform) {
 
             Destroy(child.gameObject);
         
         }
-    }
+    }*/
 
     void LoadingBarFunction(float currentValue, Image fillAmountImage, string assetName, Text status, Text percentage)
     {

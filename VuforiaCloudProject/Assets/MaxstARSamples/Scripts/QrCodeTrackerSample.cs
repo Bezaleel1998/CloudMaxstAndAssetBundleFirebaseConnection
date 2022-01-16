@@ -128,6 +128,9 @@ public class QrCodeTrackerSample : ARBehaviour
             return;
         }
 
+        //clear editing function
+        OnTrackerLost();
+
         cameraBackgroundBehaviour.UpdateCameraBackgroundImage(state);
 
         TrackingResult trackingResult = state.GetTrackingResult();
@@ -149,6 +152,10 @@ public class QrCodeTrackerSample : ARBehaviour
                     {
                         qrCodeTrackable.OnTrackSuccess(
                             "", trackable.GetName(), trackable.GetPose());
+
+                        //call editing function
+                        OnTrackerDetect(trackable.GetName());
+
                     }
 
                     isNotFound = false;
@@ -189,4 +196,21 @@ public class QrCodeTrackerSample : ARBehaviour
 		StopCamera();
 
 	}
+
+    #region WHEN_TRACKER_DETECTED
+    void OnTrackerDetect(string trackerName)
+    {
+
+        PlayerPrefs.SetString("MaxStTrackerCloudName", trackerName);
+
+    }
+
+    void OnTrackerLost()
+    {
+
+        PlayerPrefs.SetString("MaxStTrackerCloudName", "");
+
+    }
+    #endregion
+
 }
